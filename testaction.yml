@@ -1,0 +1,2 @@
+- name: Fortran Program with GNU Autotools Simple Compiling Test
+  uses: holishing/gfortran_autotool_action@2020.308.proto
