@@ -6,5 +6,8 @@ on:
   pull_request:
     branches: [ master ]
 
-steps:
-  uses: holishing/gfortran_autotool_action@2020.308.proto
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: holishing/gfortran_autotool_action@2020.308.proto
