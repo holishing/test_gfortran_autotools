@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: test again
-      uses: holishing/gfortran_autotool_action@2020.308.z0008
+      uses: holishing/gfortran_autotool_action@2020.308.0
       with:
         matrix:
         args:  ${{ matrix.content }}
