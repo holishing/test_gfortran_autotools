@@ -7,7 +7,7 @@ name: test github action in a project
 on: [push, pull_request]
 
 strategy:
-  argmatrix:
+  matrix:
     content: ["--host=i686-w64-mingw64","--host=i686-w64-mingw32"]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -25,4 +25,4 @@ jobs:
       uses: holishing/gfortran_autotool_action@2020.308.z0007
       with:
         matrix:
-        args:  ${{ argmatrix.content }}
+        args:  ${{ matrix.content }}
