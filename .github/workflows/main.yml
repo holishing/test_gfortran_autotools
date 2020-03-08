@@ -18,6 +18,6 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     - name: test again
-      uses: holishing/gfortran_autotool_action@2020.308.z0001
+      uses: holishing/gfortran_autotool_action@2020.308.z0002
       with:
         args: "--host=i686-w64-mingw32"
