@@ -6,6 +6,10 @@ name: test github action in a project
 # events but only for the master branch
 on: [push, pull_request]
 
+strategy:
+  argmatrix:
+    content: ["--host=i686-w64-mingw64","--host=i686-w64-mingw32"]
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -18,6 +22,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     - name: test again
-      uses: holishing/gfortran_autotool_action@2020.308.z0006
+      uses: holishing/gfortran_autotool_action@2020.308.z0007
       with:
-        args: "--host=i686-w64-mingw64"
+        matrix:
+        args:  ${{ argmatrix.content }}
