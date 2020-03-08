@@ -4,11 +4,7 @@ name: test github action in a project
 
 # Controls when the action will run. Triggers the workflow on push or pull request 
 # events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,4 +17,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - uses: holishing/gfortran_autotool_action@2020.308.proto
+    - name: test again
+      uses: holishing/gfortran_autotool_action@2020.308.proto2
+      with:
+        args: "--host=i686-w64-mingw32"
