@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        content: ["","--host=i686-w64-mingw64","--host=i686-w64-mingw32"]
+        content: ["","--host=x86_64-w64-mingw32","--host=i686-w64-mingw32"]
     steps:
     - uses: actions/checkout@v2
     - name: test again
